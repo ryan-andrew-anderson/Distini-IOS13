@@ -23,5 +23,4 @@ struct Story {
         self.choice1Destination = Choice1Result
         self.choice2Destination = Choice2Result
     }
-
 }
