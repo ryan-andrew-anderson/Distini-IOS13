@@ -3,6 +3,7 @@
 //  Destini-iOS13
 //
 //  Created by Angela Yu on 08/08/2019.
+//  Modified by Ryan A. starting on 11/24/2021.
 //  Copyright © 2019 The App Brewery. All rights reserved.
 //
 
@@ -15,10 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice2Button: UIButton!
     
     var storyBrain = StoryBrain()
-    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+        updateUI(Choice2Destination: 0)
     }
     
     @IBAction func choiceMade(_ sender: UIButton) {
@@ -28,14 +29,10 @@ class ViewController: UIViewController {
         } else {
             storyLabel.text = "You offer the man your lunch and $20. The man expresses his thanks and you feel a little but better becuase you improved someones life today. "
         }
-        sender.isSelected = true
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        updateUI(Choice2Destination: storyBrain.stories[0].choice1Destination)
     }
     
-    @objc func updateUI() {
-        choice1Button.isSelected = false
-        choice2Button.isSelected = false
-        
+    func updateUI(Choice2Destination: Int) {
         storyLabel.text = storyBrain.stories[storyBrain.storyNumber].title
         choice1Button.setTitle(storyBrain.stories[storyBrain.storyNumber].choice1, for: .normal)
         choice2Button.setTitle(storyBrain.stories[storyBrain.storyNumber].choice2, for: .normal)

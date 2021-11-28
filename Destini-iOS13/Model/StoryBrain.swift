@@ -3,6 +3,7 @@
 //  Destini-iOS13
 //
 //  Created by Angela Yu on 08/08/2019.
+//  Modified by Ryan A. starting on 11/24/2021.
 //  Copyright © 2019 The App Brewery. All rights reserved.
 //
 
@@ -16,9 +17,10 @@ struct StoryBrain {
         Story(
             Title: "As your walking down the street you see a man on the side of the road with nothing to his name except for the clothes on his back. As you pass him you do? ",
             Choice1: "Keep walking",
+            Choice1Destination: 1,
             Choice2: "Offer him somthing to make his day a little bit better",
-            Choice1Result: 1,
-            Choice2Result: 3
+            Choice2Destination: 3
+
         )
         //        ,
         //        Story(
