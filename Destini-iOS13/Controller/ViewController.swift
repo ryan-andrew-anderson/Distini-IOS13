@@ -28,7 +28,6 @@ class ViewController: UIViewController {
             storyBrain.storyNumber = storyBrain.stories[storyBrain.storyNumber].choice1Destination
         } else {
             storyBrain.storyNumber = storyBrain.stories[storyBrain.storyNumber].choice2Destination
-            
         }
         updateUI(storyBrain.storyNumber)
     }
