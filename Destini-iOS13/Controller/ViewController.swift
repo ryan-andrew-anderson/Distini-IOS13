@@ -19,22 +19,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI(Choice2Destination: 0)
+        updateUI(0)
     }
     
     @IBAction func choiceMade(_ sender: UIButton) {
         
         if sender.currentTitle == storyBrain.stories[storyBrain.storyNumber].choice1 {
-            storyLabel.text = "You go about your day and forget your enconter with the man"
+            storyBrain.storyNumber = storyBrain.stories[storyBrain.storyNumber].choice1Destination
         } else {
-            storyLabel.text = "You offer the man your lunch and $20. The man expresses his thanks and you feel a little but better becuase you improved someones life today. "
+            storyBrain.storyNumber = storyBrain.stories[storyBrain.storyNumber].choice2Destination
+            
         }
-        updateUI(Choice2Destination: storyBrain.stories[0].choice1Destination)
+        updateUI(storyBrain.storyNumber)
     }
     
-    func updateUI(Choice2Destination: Int) {
-        storyLabel.text = storyBrain.stories[storyBrain.storyNumber].title
-        choice1Button.setTitle(storyBrain.stories[storyBrain.storyNumber].choice1, for: .normal)
-        choice2Button.setTitle(storyBrain.stories[storyBrain.storyNumber].choice2, for: .normal)
+    func updateUI(_ choice: Int) {
+        storyLabel.text = storyBrain.stories[choice].title
+        choice1Button.setTitle(storyBrain.stories[choice].choice1, for: .normal)
+        choice2Button.setTitle(storyBrain.stories[choice].choice2, for: .normal)
     }
 }

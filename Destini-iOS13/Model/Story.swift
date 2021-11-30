@@ -16,12 +16,12 @@ struct Story {
     var choice1Destination : Int
     var choice2Destination : Int
     
-    init(Title : String, Choice1: String,Choice1Destination: Int, Choice2: String, Choice2Destination: Int) {
+    init(title : String, choice1: String,choice1Destination: Int, choice2: String, choice2Destination: Int) {
         
-        self.title = Title
-        self.choice1 = Choice1
-        self.choice2 = Choice2
-        self.choice1Destination = Choice1Destination
-        self.choice2Destination = Choice2Destination
+        self.title = title
+        self.choice1 = choice1
+        self.choice2 = choice2
+        self.choice1Destination = choice1Destination
+        self.choice2Destination = choice2Destination
     }
 }
