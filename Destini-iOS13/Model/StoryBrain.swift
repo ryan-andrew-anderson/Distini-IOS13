@@ -45,4 +45,5 @@ struct StoryBrain {
             choice1: "The", choice1Destination: 0,
             choice2: "End", choice2Destination: 0
         )]
+    
 }

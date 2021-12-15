@@ -36,5 +36,17 @@ class ViewController: UIViewController {
         storyLabel.text = storyBrain.stories[choice].title
         choice1Button.setTitle(storyBrain.stories[choice].choice1, for: .normal)
         choice2Button.setTitle(storyBrain.stories[choice].choice2, for: .normal)
+        youDied(choice: choice)
     }
+    
+    func youDied(choice : Int) {
+        let destiniAlert = UIAlertController(title: "The End", message: "You Dead Brah!", preferredStyle: .alert)
+        let seeHowButton = UIAlertAction(title: "Wanna See How?", style: .destructive, handler: .none)
+        destiniAlert.addAction(seeHowButton)
+        if choice == 4 {
+        return self.present(destiniAlert, animated: true, completion: nil)
+        }
+    }
+    
+    
 }
